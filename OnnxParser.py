@@ -1,7 +1,7 @@
 import onnx 
 from texttable import Texttable
 import numpy as np
-from onnx.mapping import TENSOR_TYPE_TO_NP_TYPE
+from onnx._mapping import TENSOR_TYPE_MAP as TENSOR_TYPE_TO_NP_TYPE
 
 class OnnxParser():
     """docstring for OnnxParser"""

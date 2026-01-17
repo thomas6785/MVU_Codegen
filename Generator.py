@@ -268,6 +268,9 @@ class Generator():
 
             self.loop_cnt += 1
 
+        else:
+            raise NotImplementedError("Layer type {} is not supported yet.".format(layer_type))
+
         return code_str
 
     def __gen__riscv_code(self, model, _func_dict):

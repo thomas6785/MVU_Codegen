@@ -5,6 +5,9 @@ import numpy as np
 from utils import export_tensor
 import copy
 from collections import OrderedDict
+import os
+
+template_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), "template.S")
 
 class MVUConfig():
     def __init__(self, prec, meminfo, quantIdx, ilength, ijump, wlength, wjump, countdown, olength):
@@ -21,7 +24,7 @@ class MVUConfig():
 
 class Generator():
     """docstring for Generator"""
-    def __init__(self, model, prec, input_shape, meminfo, quantIdx=2, temp_riscv_code_file="template.S"):
+    def __init__(self, model, prec, input_shape, meminfo, quantIdx=2, temp_riscv_code_file=template_file):
         super(Generator, self).__init__()
         # expecting to receive a OnnxModel parsed object
         self.model = model

@@ -401,4 +401,3 @@ class Generator():
                     layer_weights.append(val_str)
             weight_ram[layer['name']] = layer_weights
         return weight_ram
-        

@@ -1,7 +1,25 @@
 import onnx 
 from texttable import Texttable
 import numpy as np
-from onnx.mapping import TENSOR_TYPE_TO_NP_TYPE
+from onnx import TensorProto
+
+TENSOR_TYPE_TO_NP_TYPE = {
+    int(TensorProto.FLOAT): np.dtype('float32'),
+    int(TensorProto.UINT8): np.dtype('uint8'),
+    int(TensorProto.INT8): np.dtype('int8'),
+    int(TensorProto.UINT16): np.dtype('uint16'),
+    int(TensorProto.INT16): np.dtype('int16'),
+    int(TensorProto.INT32): np.dtype('int32'),
+    int(TensorProto.INT64): np.dtype('int64'),
+    int(TensorProto.BOOL): np.dtype('bool'),
+    int(TensorProto.FLOAT16): np.dtype('float16'),
+    int(TensorProto.DOUBLE): np.dtype('float64'),
+    int(TensorProto.COMPLEX64): np.dtype('complex64'),
+    int(TensorProto.COMPLEX128): np.dtype('complex128'),
+    int(TensorProto.UINT32): np.dtype('uint32'),
+    int(TensorProto.UINT64): np.dtype('uint64')
+}
+
 
 class OnnxParser():
     """docstring for OnnxParser"""
